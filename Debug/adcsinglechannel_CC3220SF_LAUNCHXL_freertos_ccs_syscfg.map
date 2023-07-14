@@ -1,0 +1,1118 @@
+******************************************************************************
+                  TI ARM Linker PC v18.12.2                    
+******************************************************************************
+>> Linked Wed Sep 11 19:42:54 2019
+
+OUTPUT FILE NAME:   <adcsinglechannel_CC3220SF_LAUNCHXL_freertos_ccs_syscfg.out>
+ENTRY POINT SYMBOL: "resetISR"  address: 01007345
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH_HDR             01000000   000007ff  00000000  000007ff  R  X
+  FLASH                 01000800   000ff800  00007308  000f84f8  R  X
+  SRAM                  20000000   00040000  00009994  0003666c  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+01000800    01000800    00007310   00007310    r-x
+  01000800    01000800    00000040   00000040    r-- .resetVecs
+  01000840    01000840    00006d9a   00006d9a    r-x .text
+  010075dc    010075dc    00000446   00000446    r-- .const
+  01007a28    01007a28    000000e8   000000e8    r-- .cinit
+2000030c    2000030c    0000928a   00000000    rw-
+  2000030c    2000030c    00008792   00000000    rw- .bss
+  20008aa0    20008aa0    00000af6   00000000    rw- .data
+2003fc00    2003fc00    00000400   00000000    rw-
+  2003fc00    2003fc00    00000400   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.resetVecs 
+*          0    01000800    00000040     
+                  01000800    00000040     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : startup_cc32xx_ccs.obj (.resetVecs:retain)
+
+.text      0    01000840    00006d9a     
+                  01000840    000004a4     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : SystemP_freertos.obj (.text:doPrint)
+                  01000ce4    0000042c     driverlib.a : prcm.obj (.text:PRCMCC3200MCUInit)
+                  01001110    00000278     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:UARTCC32XX_open)
+                  01001388    000001d4     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:xQueueSemaphoreTake)
+                  0100155c    000001b8                                                       : queue.obj (.text:xQueueGenericSend)
+                  01001714    000001b6     rtsv7M4_T_le_eabi.lib : fd_add_t2.asm.obj (.text)
+                  010018ca    00000002     Board.obj (.text:Board_initHook)
+                  010018cc    000001b0     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : PowerCC32XX_freertos.obj (.text:PowerCC32XX_sleepPolicy)
+                  01001a7c    00000180                                                       : queue.obj (.text:xQueueReceive)
+                  01001bfc    00000178                                                       : heap_4.obj (.text:pvPortMalloc)
+                  01001d74    00000164                                                       : timers.obj (.text:prvProcessReceivedCommands)
+                  01001ed8    00000164     adcsinglechannel.obj (.text:threadFxn1)
+                  0100203c    00000148     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:parkPins)
+                  01002184    0000013c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:xTaskIncrementTick)
+                  010022c0    00000138                                                       : pthread.obj (.text:pthread_create)
+                  010023f8    0000012a                                                       : tasks.obj (.text:prvInitialiseNewTask)
+                  01002522    00000002     display.aem4 : DisplayUart.oem4 (.text:DisplayUartMin_clear)
+                  01002524    00000120     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:UARTCC32XX_close)
+                  01002644    0000011c                         : PowerCC32XX.oem4 (.text:Power_sleep)
+                  01002760    0000011c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:xTaskResumeAll)
+                  0100287c    00000114                                                       : tasks.obj (.text:vTaskPriorityDisinheritAfterTimeout)
+                  01002990    00000104                                                       : queue.obj (.text:xQueueGenericSendFromISR)
+                  01002a94    00000100     adcsinglechannel.obj (.text:threadFxn0)
+                  01002b94    000000fc     rtsv7M4_T_le_eabi.lib : fd_mul_t2.asm.obj (.text)
+                  01002c90    000000fc     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:vTaskSuspend)
+                  01002d8c    000000f8                                                       : tasks.obj (.text:vTaskDelete)
+                  01002e84    000000f2     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:UARTCC32XX_control)
+                  01002f76    000000f0     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:xQueueGiveFromISR)
+                  01003066    00000002     display.aem4 : DisplayUart.oem4 (.text:DisplayUartMin_clearLines)
+                  01003068    000000e8     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:xTaskPriorityInherit)
+                  01003150    000000e0                                                       : tasks.obj (.text:xTaskPriorityDisinherit)
+                  01003230    000000dc                                                       : tasks.obj (.text:vTaskSwitchContext)
+                  0100330c    000000d8                                                       : queue.obj (.text:xQueueReceiveFromISR)
+                  010033e4    000000d4     adcsinglechannel.obj (.text:mainThread)
+                  010034b8    000000ca     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:UARTCC32XX_write)
+                  01003582    00000002     display.aem4 : DisplayUart.oem4 (.text:DisplayUartMin_init)
+                  01003584    000000c4     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:prvAddNewTaskToReadyList)
+                  01003648    000000c0     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:restoreParkedPins)
+                  01003708    000000c0     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : port.obj (.text:xPortStartScheduler)
+                  010037c8    000000be                                                       : queue.obj (.text:prvCopyDataToQueue)
+                  01003886    00000002     driverlib.a : interrupt.obj (.text:IntDefaultHandler)
+                  01003888    000000bc     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : heap_4.obj (.text:prvHeapInit)
+                  01003944    000000bc                                                       : timers.obj (.text:prvSwitchTimerLists)
+                  01003a00    000000ba     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:UARTCC32XX_readPolling)
+                  01003aba    00000002     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : PowerCC32XX_freertos.obj (.text:PowerCC32XX_initPolicy)
+                  01003abc    000000ba                                                       : portasm.obj (.text)
+                  01003b76    00000002     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:UARTCC32XX_init)
+                  01003b78    000000b8                         : UARTCC32XX.oem4 (.text:initHw)
+                  01003c30    000000b8     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:xQueueGenericReset)
+                  01003ce8    000000b6                                                       : SystemP_freertos.obj (.text:formatNum)
+                  01003d9e    000000b6     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:readTaskCallback)
+                  01003e54    000000b0     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:prvAddCurrentTaskToDelayedList)
+                  01003f04    000000b0                                                       : tasks.obj (.text:xTaskCheckForTimeOut)
+                  01003fb4    000000ae                                                       : queue.obj (.text:prvUnlockQueue)
+                  01004062    000000ae     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:readIsrTextBlocking)
+                  01004110    000000a8     driverlib.a : interrupt.obj (.text:IntDisable)
+                  010041b8    000000a8                 : interrupt.obj (.text:IntEnable)
+                  01004260    000000a8     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:PowerCC32XX_configureWakeup)
+                  01004308    000000a8     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : heap_4.obj (.text:prvInsertBlockIntoFreeList)
+                  010043b0    000000a8     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:readTaskBlocking)
+                  01004458    000000a8     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:xTaskRemoveFromEventList)
+                  01004500    000000a2     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:readIsrTextCallback)
+                  010045a2    000000a2                         : UARTCC32XX.oem4 (.text:writeData)
+                  01004644    000000a0     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_create)
+                  010046e4    0000009c     rtsv7M4_T_le_eabi.lib : memcpy_t2.asm.obj (.text)
+                  01004780    0000009c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : heap_4.obj (.text:vPortFree)
+                  0100481c    00000096     rtsv7M4_T_le_eabi.lib : ull_div_t2.asm.obj (.text)
+                  010048b2    00000002     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : startup_cc32xx_ccs.obj (.text:busFaultHandler)
+                  010048b4    00000094     drivers_cc32xx.aem4 : ADCCC32XX.oem4 (.text:ADCCC32XX_open)
+                  01004948    00000094     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:vTaskStartScheduler)
+                  010049dc    00000090     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:restoreNVICRegs)
+                  01004a6c    00000088     driverlib.a : pin.obj (.text:PinConfigSet)
+                  01004af4    00000088     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:prvProcessTimerOrBlockTask)
+                  01004b7c    00000086     rtsv7M4_T_le_eabi.lib : fd_cmp_t2.asm.obj (.text:__aeabi_cdcmple)
+                  01004c02    00000002     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : startup_cc32xx_ccs.obj (.text:defaultHandler)
+                  01004c04    00000084     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_init)
+                  01004c88    00000084                         : PowerCC32XX.oem4 (.text:saveNVICRegs)
+                  01004d0c    00000084     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:xTimerGenericCommand)
+                  01004d90    00000080     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_setDependency)
+                  01004e10    00000080     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:prvProcessExpiredTimer)
+                  01004e90    0000007c     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:readIsrBinaryBlocking)
+                  01004f0c    0000007a     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread.obj (.text:removeThreadKeys)
+                  01004f86    0000007a     rtsv7M4_T_le_eabi.lib : memset_t2.asm.obj (.text)
+                  01005000    0000007a     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:xTaskCreate)
+                  0100507a    00000002                                                       : startup_cc32xx_ccs.obj (.text:faultISR)
+                  0100507c    00000078                                                       : timers.obj (.text:prvInsertTimerInActiveList)
+                  010050f4    00000078     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:readIsrBinaryCallback)
+                  0100516c    00000074                         : ADCCC32XX.oem4 (.text:ADCCC32XX_close)
+                  010051e0    00000074                         : UARTCC32XX.oem4 (.text:UARTCC32XX_hwiIntFxn)
+                  01005254    00000074     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:prvInitialiseTaskLists)
+                  010052c8    00000074                                                       : port.obj (.text:vPortValidateInterruptPriority)
+                  0100533c    00000070                                                       : ClockP_freertos.obj (.text:setClockObjTimeout)
+                  010053ac    0000006a                                                       : queue.obj (.text:xQueueGenericCreate)
+                  01005416    00000068     rtsv7M4_T_le_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  0100547e    00000066     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:UARTCC32XX_writeCancel)
+                  010054e4    00000066     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:prvInitialiseNewTimer)
+                  0100554a    00000066                                                       : list.obj (.text:vListInsert)
+                  010055b0    00000064     drivers_cc32xx.aem4 : ADCCC32XX.oem4 (.text:ADCCC32XX_convert)
+                  01005614    00000064     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_stop)
+                  01005678    00000064     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:PowerCC32XX_setParkState)
+                  010056dc    00000064     main_freertos.obj (.text:main)
+                  01005740    00000064     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:prvGetExpectedIdleTime)
+                  010057a4    00000062     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:UARTCC32XX_writePolling)
+                  01005806    00000002     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : startup_cc32xx_ccs.obj (.text:nmiISR)
+                  01005808    00000060                                                       : HwiPCC32XX_freertos.obj (.text:HwiP_create)
+                  01005868    00000060     driverlib.a : prcm.obj (.text:PRCMSysResetCauseGet)
+                  010058c8    0000005c     display.aem4 : Display.oem4 (.text:Display_doOpen)
+                  01005924    0000005c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:prvIdleTask)
+                  01005980    0000005c                                                       : pthread.obj (.text:pthread_exit)
+                  010059dc    0000005c                                                       : queue.obj (.text:vQueueWaitForMessageRestricted)
+                  01005a38    00000058     driverlib.a : prcm.obj (.text:PRCMPeripheralReset)
+                  01005a90    00000058     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_releaseDependency)
+                  01005ae8    00000058     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:eTaskConfirmSleepModeStatus)
+                  01005b40    00000058                                                       : port.obj (.text:vPortSetupTimerInterrupt)
+                  01005b98    00000058                                                       : queue.obj (.text:xQueueCreateCountingSemaphore)
+                  01005bf0    00000056                                                       : SemaphoreP_freertos.obj (.text:SemaphoreP_create)
+                  01005c46    00000002     rtsv7M4_T_le_eabi.lib : div0.asm.obj (.text)
+                  01005c48    00000054     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_delete)
+                  01005c9c    00000054     driverlib.a : interrupt.obj (.text:IntPrioritySet)
+                  01005cf0    00000054     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:ringBufGet)
+                  01005d44    00000054     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:xTimerCreateTimerTask)
+                  01005d98    00000052     drivers_cc32xx.aem4 : PowerCC32XX_asm.oem4 (.text:PowerCC32XX_resumeLPDS)
+                  01005dea    00000002     main_freertos.obj (.text:vApplicationMallocFailedHook)
+                  01005dec    00000050     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : port.obj (.text:pxPortInitialiseStack)
+                  01005e3c    0000004c     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:PowerCC32XX_parkPin)
+                  01005e88    0000004c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : startup_cc32xx_ccs.obj (.text:initVectors)
+                  01005ed4    0000004c                                                       : timers.obj (.text:prvCheckForValidListAndQueue)
+                  01005f20    0000004c                                                       : tasks.obj (.text:prvCheckTasksWaitingTermination)
+                  01005f6c    0000004c     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:restorePeriphClocks)
+                  01005fb8    0000004c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : port.obj (.text:vPortEnterCritical)
+                  01006004    0000004a     display.aem4 : DisplayUart.oem4 (.text:DisplayUartMin_open)
+                  0100604e    00000002     --HOLE-- [fill = 0]
+                  01006050    00000048     driverlib.a : flash.obj (.text:FlashDisable)
+                  01006098    00000048     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : HwiPCC32XX_freertos.obj (.text:HwiP_dispatch)
+                  010060e0    00000048     driverlib.a : prcm.obj (.text:PRCMLPDSEnter)
+                  01006128    00000048                 : prcm.obj (.text:PRCMPeripheralClkEnable)
+                  01006170    00000048     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_releaseConstraint)
+                  010061b8    00000048     rtsv7M4_T_le_eabi.lib : fd_toi_t2.asm.obj (.text)
+                  01006200    00000048     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : list.obj (.text:uxListRemove)
+                  01006248    00000046     display.aem4 : DisplayUart.oem4 (.text:DisplayUartMin_vprintf)
+                  0100628e    00000046     drivers_cc32xx.aem4 : RingBuf.oem4 (.text:RingBuf_put)
+                  010062d4    00000044                         : ADC.oem4 (.text:ADC_init)
+                  01006318    00000044     driverlib.a : prcm.obj (.text:PRCMLPDSRestoreInfoSet)
+                  0100635c    00000044     drivers_cc32xx.aem4 : PowerCC32XX_asm.oem4 (.text:PowerCC32XX_enterLPDS)
+                  010063a0    00000044                         : UART.oem4 (.text:UART_init)
+                  010063e4    00000044     rtsv7M4_T_le_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  01006428    00000044     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:prvInitialiseNewQueue)
+                  0100646c    00000044     rtsv7M4_T_le_eabi.lib : fd_tou_t2.asm.obj (.text)
+                  010064b0    00000044     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:vTaskStepTick)
+                  010064f4    00000040     drivers_cc32xx.aem4 : ADC.oem4 (.text:ADC_open)
+                  01006534    00000040     driverlib.a : pin.obj (.text:PinModeSet)
+                  01006574    00000040     drivers_cc32xx.aem4 : RingBuf.oem4 (.text:RingBuf_get)
+                  010065b4    00000040                         : UARTCC32XX.oem4 (.text:UARTCC32XX_read)
+                  010065f4    00000040                         : UART.oem4 (.text:UART_open)
+                  01006634    00000040     rtsv7M4_T_le_eabi.lib : u_divt2.asm.obj (.text)
+                  01006674    00000040     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:vTaskPlaceOnEventListRestricted)
+                  010066b4    0000003e                                                       : ClockP_freertos.obj (.text:ClockP_callbackFxn)
+                  010066f2    0000003e                                                       : pthread.obj (.text:pthread_setcancelstate)
+                  01006730    0000003c     driverlib.a : prcm.obj (.text:PRCMSlowClkCtrFastGet)
+                  0100676c    0000003c     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_setConstraint)
+                  010067a8    0000003c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:prvCopyDataFromQueue)
+                  010067e4    0000003c                                                       : tasks.obj (.text:prvResetNextTaskUnblockTime)
+                  01006820    0000003c                                                       : tasks.obj (.text:pvTaskGetThreadLocalStoragePointer)
+                  0100685c    0000003c                                                       : list.obj (.text:vListInsertEnd)
+                  01006898    0000003c                                                       : timers.obj (.text:xTimerCreate)
+                  010068d4    00000038     driverlib.a : prcm.obj (.text:PRCMLPDSEnterKeepDebugIf)
+                  0100690c    00000038     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:notify)
+                  01006944    00000038     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:prvGetNextExpireTime)
+                  0100697c    00000038                                                       : port.obj (.text:prvTaskExitError)
+                  010069b4    00000036     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:UARTCC32XX_readCancel)
+                  010069ea    00000002     --HOLE-- [fill = 0]
+                  010069ec    00000034     driverlib.a : pin.obj (.text:PinModeGet)
+                  01006a20    00000034     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:PowerCC32XX_restoreParkState)
+                  01006a54    00000034     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : SemaphoreP_freertos.obj (.text:SemaphoreP_pend)
+                  01006a88    00000034                                                       : timers.obj (.text:prvSampleTimeNow)
+                  01006abc    00000034                                                       : tasks.obj (.text:vTaskPlaceOnEventList)
+                  01006af0    00000030     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:PowerCC32XX_restoreParkedPin)
+                  01006b20    00000030     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : list.obj (.text:vListInitialise)
+                  01006b50    00000030                                                       : port.obj (.text:vPortExitCritical)
+                  01006b80    00000030                                                       : tasks.obj (.text:xTaskGetSchedulerState)
+                  01006bb0    0000002e                                                       : SystemP_freertos.obj (.text:putChar)
+                  01006bde    0000002e                                                       : timers.obj (.text:pvTimerGetTimerID)
+                  01006c0c    0000002e     rtsv7M4_T_le_eabi.lib : i_tofd_t2.asm.obj (.text)
+                  01006c3a    00000002     --HOLE-- [fill = 0]
+                  01006c3c    0000002c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : HwiPCC32XX_freertos.obj (.text:HwiP_disable)
+                  01006c68    0000002c     driverlib.a : prcm.obj (.text:PRCMLPDSIntervalSet)
+                  01006c94    0000002c     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:PowerCC32XX_getParkState)
+                  01006cc0    0000002c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : SemaphoreP_freertos.obj (.text:SemaphoreP_createBinary)
+                  01006cec    0000002c                                                       : tasks.obj (.text:vTaskSetApplicationTaskTag)
+                  01006d18    0000002c                                                       : port.obj (.text:xPortSysTickHandler)
+                  01006d44    0000002a     display.aem4 : Display.oem4 (.text:Display_doPrintf)
+                  01006d6e    00000002     --HOLE-- [fill = 0]
+                  01006d70    00000028                  : Display.oem4 (.text:Display_doInit)
+                  01006d98    00000028     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : HwiPCC32XX_freertos.obj (.text:HwiP_inISR)
+                  01006dc0    00000028     driverlib.a : prcm.obj (.text:PRCMLPDSWakeupSourceEnable)
+                  01006de8    00000028                 : prcm.obj (.text:PRCMPeripheralClkDisable)
+                  01006e10    00000028     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_registerNotify)
+                  01006e38    00000028     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread.obj (.text:pthread_attr_setschedparam)
+                  01006e60    00000028                                                       : tasks.obj (.text:xTaskGetApplicationTaskTag)
+                  01006e88    00000026     drivers_cc32xx.aem4 : List.oem4 (.text:List_put)
+                  01006eae    00000026                         : List.oem4 (.text:List_remove)
+                  01006ed4    00000026     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread.obj (.text:_pthread_cleanup_pop)
+                  01006efa    00000026                                                       : queue.obj (.text:prvIsQueueFull)
+                  01006f20    00000024     driverlib.a : interrupt.obj (.text:IntUnregister)
+                  01006f44    00000024     rtsv7M4_T_le_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  01006f68    00000024     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:prvGetDisinheritPriorityAfterTimeout)
+                  01006f8c    00000024                                                       : queue.obj (.text:vQueueDelete)
+                  01006fb0    00000024                                                       : tasks.obj (.text:vTaskInternalSetTimeOutState)
+                  01006fd4    00000022                                                       : SemaphoreP_freertos.obj (.text:SemaphoreP_post)
+                  01006ff6    00000022                                                       : SystemP_freertos.obj (.text:SystemP_vsnprintf)
+                  01007018    00000022                                                       : pthread.obj (.text:pthread_attr_setdetachstate)
+                  0100703a    00000002     --HOLE-- [fill = 0]
+                  0100703c    00000020     drivers_cc32xx.aem4 : ADCCC32XX.oem4 (.text:ADCCC32XX_convertToMicroVolts)
+                  0100705c    00000020     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_getCpuFreq)
+                  0100707c    00000020                                                       : HwiPCC32XX_freertos.obj (.text:HwiP_restore)
+                  0100709c    00000020     driverlib.a : interrupt.obj (.text:IntRegister)
+                  010070bc    00000020     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_unregisterNotify)
+                  010070dc    00000020                         : RingBuf.oem4 (.text:RingBuf_peek)
+                  010070fc    00000020                         : UARTCC32XX.oem4 (.text:getPowerMgrId)
+                  0100711c    00000020     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:prvIsQueueEmpty)
+                  0100713c    00000020     rtsv7M4_T_le_eabi.lib : u_tofd_t2.asm.obj (.text)
+                  0100715c    0000001e     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_start)
+                  0100717a    0000001e                                                       : HwiPCC32XX_freertos.obj (.text:HwiP_Params_init)
+                  01007198    0000001e                                                       : pthread.obj (.text:_pthread_runStub)
+                  010071b6    0000001c                                                       : ClockP_freertos.obj (.text:ClockP_Params_init)
+                  010071d2    00000002     --HOLE-- [fill = 0]
+                  010071d4    0000001c     driverlib.a : pin.obj (.text:PinToPadGet)
+                  010071f0    0000001c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread.obj (.text:pthread_attr_init)
+                  0100720c    0000001c                                                       : tasks.obj (.text:pvTaskIncrementMutexHeldCount)
+                  01007228    0000001a                                                       : PTLS.obj (.text:PTLS_taskDeleteHook)
+                  01007242    0000001a                                                       : timers.obj (.text:prvTimerTask)
+                  0100725c    00000018     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_idleFunc)
+                  01007274    00000018     driverlib.a : uart.obj (.text:UARTBusy)
+                  0100728c    00000018                 : uart.obj (.text:UARTIntEnable)
+                  010072a4    00000018     drivers_cc32xx.aem4 : UART.oem4 (.text:UART_Params_init)
+                  010072bc    00000018     rtsv7M4_T_le_eabi.lib : ll_mul_t2.asm.obj (.text)
+                  010072d4    00000016     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_setTimeout)
+                  010072ea    00000016     display.aem4 : DisplayUart.oem4 (.text:DisplayUartMin_close)
+                  01007300    00000016     driverlib.a : prcm.obj (.text:PRCMHIBRegRead)
+                  01007316    00000016                 : prcm.obj (.text:PRCMHIBRegWrite)
+                  0100732c    00000016     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : SemaphoreP_freertos.obj (.text:SemaphoreP_Params_init)
+                  01007342    00000002     --HOLE-- [fill = 0]
+                  01007344    00000016                                                       : startup_cc32xx_ccs.obj (.text:resetISR)
+                  0100735a    00000014     driverlib.a : cpu.obj (.text:CPUcpsie)
+                  0100736e    00000002     --HOLE-- [fill = 0]
+                  01007370    00000014                 : interrupt.obj (.text:IntVTableBaseSet)
+                  01007384    00000014     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_getDependencyCount)
+                  01007398    00000014     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:prvDeleteTCB)
+                  010073ac    00000014                                                       : pthread.obj (.text:pthread_attr_setstacksize)
+                  010073c0    00000014                                                       : pthread.obj (.text:pthread_self)
+                  010073d4    00000014     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:releasePowerConstraint)
+                  010073e8    00000014     rtsv7M4_T_le_eabi.lib : strlen.c.obj (.text:strlen)
+                  010073fc    00000014     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : PowerCC32XX_freertos.obj (.text:vPortSuppressTicksAndSleep)
+                  01007410    00000014                                                       : tasks.obj (.text:xTaskGetCurrentTaskHandle)
+                  01007424    00000014                                                       : tasks.obj (.text:xTaskGetTickCount)
+                  01007438    00000012                                                       : HwiPCC32XX_freertos.obj (.text:HwiP_delete)
+                  0100744a    00000012     drivers_cc32xx.aem4 : RingBuf.oem4 (.text:RingBuf_construct)
+                  0100745c    00000010     Board.obj (.text:Board_init)
+                  0100746c    00000010     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_getSystemTickPeriod)
+                  0100747c    00000010     driverlib.a : systick.obj (.text:SysTickDisable)
+                  0100748c    00000010                 : systick.obj (.text:SysTickEnable)
+                  0100749c    00000010     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:readBlockingTimeout)
+                  010074ac    00000010     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : list.obj (.text:vListInitialiseItem)
+                  010074bc    00000010                                                       : tasks.obj (.text:vTaskSuspendAll)
+                  010074cc    0000000e     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_getTransitionLatency)
+                  010074da    0000000e                         : RingBuf.oem4 (.text:RingBuf_isFull)
+                  010074e8    0000000e     rtsv7M4_T_le_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  010074f6    0000000c     driverlib.a : cpu.obj (.text:CPUwfi)
+                  01007502    00000002     --HOLE-- [fill = 0]
+                  01007504    0000000c     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_getConstraintMask)
+                  01007510    0000000c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : SemaphoreP_freertos.obj (.text:SemaphoreP_delete)
+                  0100751c    0000000c     rtsv7M4_T_le_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
+                  01007528    0000000c     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:postNotifyFxn)
+                  01007534    0000000c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:vTaskMissedYield)
+                  01007540    0000000a     drivers_cc32xx.aem4 : ADC.oem4 (.text:ADC_Params_init)
+                  0100754a    0000000a                         : ADC.oem4 (.text:ADC_close)
+                  01007554    0000000a                         : ADC.oem4 (.text:ADC_convert)
+                  0100755e    0000000a                         : ADC.oem4 (.text:ADC_convertToMicroVolts)
+                  01007568    0000000a     driverlib.a : interrupt.obj (.text:IntMasterEnable)
+                  01007572    0000000a     drivers_cc32xx.aem4 : UART.oem4 (.text:UART_close)
+                  0100757c    0000000a                         : UART.oem4 (.text:UART_control)
+                  01007586    0000000a                         : UART.oem4 (.text:UART_write)
+                  01007590    0000000a     main_freertos.obj (.text:vApplicationStackOverflowHook)
+                  0100759a    00000008     drivers_cc32xx.aem4 : ADCCC32XX.oem4 (.text:ADCCC32XX_init)
+                  010075a2    00000008     driverlib.a : prcm.obj (.text:PRCMSleepEnter)
+                  010075aa    00000008     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.text:readSemCallback)
+                  010075b2    00000008                         : UARTCC32XX.oem4 (.text:writeSemCallback)
+                  010075ba    00000006                         : ADCCC32XX.oem4 (.text:ADCCC32XX_control)
+                  010075c0    00000006     display.aem4 : DisplayUart.oem4 (.text:DisplayUartMin_control)
+                  010075c6    00000006                  : DisplayUart.oem4 (.text:DisplayUartMin_getType)
+                  010075cc    00000006     driverlib.a : utils.obj (.text:UtilsDelay)
+                  010075d2    00000004     rtsv7M4_T_le_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  010075d6    00000004                           : exit.c.obj (.text:abort:abort)
+
+.const     0    010075dc    00000446     
+                  010075dc    00000100     driverlib.a : pin.obj (.const:g_ulPinToPadMap)
+                  010076dc    000000d4                 : interrupt.obj (.const:g_pulRegs)
+                  010077b0    000000a8                 : prcm.obj (.const:PRCM_PeriphRegsList)
+                  01007858    00000040     Board.obj (.const:PowerCC32XX_config)
+                  01007898    00000028     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.const:UARTCC32XX_fxnTable)
+                  010078c0    00000024                         : UART.oem4 (.const:UART_defaultParams)
+                  010078e4    00000024     Board.obj (.const:uartCC32XXHWAttrs0)
+                  01007908    00000020     display.aem4 : DisplayUart.oem4 (.const:DisplayUartMin_fxnTable)
+                  01007928    00000020     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.const:staticFxnTable)
+                  01007948    00000018                         : ADCCC32XX.oem4 (.const:ADCCC32XX_fxnTable)
+                  01007960    00000018     Board.obj (.const:ADC_config)
+                  01007978    00000018     driverlib.a : interrupt.obj (.const:g_pulDisRegs)
+                  01007990    00000018                 : interrupt.obj (.const:g_pulEnRegs)
+                  010079a8    00000014     Board.obj (.const:displayUartHWAttrs)
+                  010079bc    00000014     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.const:parityType)
+                  010079d0    00000010                         : UARTCC32XX.oem4 (.const:dataLength)
+                  010079e0    0000000c     Board.obj (.const:Display_config)
+                  010079ec    0000000c     Board.obj (.const:UART_config)
+                  010079f8    00000008     drivers_cc32xx.aem4 : ADC.oem4 (.const:ADC_defaultParams)
+                  01007a00    00000008     Board.obj (.const:adcCC32XXHWAttrs)
+                  01007a08    00000008     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : port.obj (.const)
+                  01007a10    00000008     drivers_cc32xx.aem4 : UARTCC32XX.oem4 (.const:stopBits)
+                  01007a18    00000004     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread.obj (.const)
+                  01007a1c    00000003     Board.obj (.const)
+                  01007a1f    00000001     display.aem4 : Display.oem4 (.const:Display_defaultParams)
+                  01007a20    00000002     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread.obj (.const:.string)
+
+.cinit     0    01007a28    000000e8     
+                  01007a28    000000c3     (.cinit..data.load) [load image, compression = lzss]
+                  01007aeb    00000001     --HOLE-- [fill = 0]
+                  01007aec    0000000c     (__TI_handler_table)
+                  01007af8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  01007b00    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    01000800    00000000     UNINITIALIZED
+
+.ramVecs   0    20000000    0000030c     NOLOAD SECTION
+                  20000000    0000030c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : startup_cc32xx_ccs.obj (.ramVecs)
+
+.bss       0    2000030c    00008792     UNINITIALIZED
+                  2000030c    00008000     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : heap_4.obj (.bss:ucHeap)
+                  2000830c    00000400     Board.obj (.bss:displayUARTBuffer)
+                  2000870c    0000012c     (.common:PowerCC32XX_contextSave)
+                  20008838    000000c8     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.bss:pxReadyTasksLists)
+                  20008900    00000084     (.common:uartCC32XXObjects0)
+                  20008984    00000028     (.common:adcValue1MicroVolt)
+                  200089ac    00000020     Board.obj (.bss:uartCC32XXRingBuffer0)
+                  200089cc    00000014     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.bss:xActiveTimerList1)
+                  200089e0    00000014                                                       : timers.obj (.bss:xActiveTimerList2)
+                  200089f4    00000014                                                       : tasks.obj (.bss:xDelayedTaskList1)
+                  20008a08    00000014                                                       : tasks.obj (.bss:xDelayedTaskList2)
+                  20008a1c    00000014                                                       : tasks.obj (.bss:xPendingReadyList)
+                  20008a30    00000014                                                       : tasks.obj (.bss:xSuspendedTaskList)
+                  20008a44    00000014                                                       : tasks.obj (.bss:xTasksWaitingTermination)
+                  20008a58    00000014     (.common:adcValue1)
+                  20008a6c    0000000c     (.common:displayUartObject)
+                  20008a78    00000008                                                       : tasks.obj (.bss)
+                  20008a80    00000008                                                       : timers.obj (.bss)
+                  20008a88    00000008                                                       : heap_4.obj (.bss:xStart)
+                  20008a90    00000004     adcsinglechannel.obj (.bss)
+                  20008a94    00000004     (.common:adcCC32XXObjects)
+                  20008a98    00000004     (.common:adcValue0MicroVolt)
+                  20008a9c    00000002     (.common:adcValue0)
+
+.data      0    20008aa0    00000af6     UNINITIALIZED
+                  20008aa0    00000800     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : HwiPCC32XX_freertos.obj (.data:HwiP_dispatchTable)
+                  200092a0    0000016c     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.data:PowerCC32XX_module)
+                  2000940c    000000f8     Board.obj (.data:parkInfo)
+                  20009504    00000034     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.data)
+                  20009538    00000018                                                       : port.obj (.data)
+                  20009550    00000014                                                       : pthread.obj (.data:defaultPthreadAttrs)
+                  20009564    00000010                                                       : heap_4.obj (.data)
+                  20009574    0000000c                                                       : timers.obj (.data)
+                  20009580    00000008     drivers_cc32xx.aem4 : ADCCC32XX.oem4 (.data:state)
+                  20009588    00000004     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.data)
+                  2000958c    00000004                                                       : HwiPCC32XX_freertos.obj (.data)
+                  20009590    00000004                                                       : PowerCC32XX_freertos.obj (.data)
+                  20009594    00000001     drivers_cc32xx.aem4 : ADC.oem4 (.data)
+                  20009595    00000001                         : UART.oem4 (.data)
+
+.stack     0    2003fc00    00000400     UNINITIALIZED
+                  2003fc00    00000004     rtsv7M4_T_le_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  2003fc04    000003fc     --HOLE--
+
+.binit     0    01000000    00000000     
+
+MODULE SUMMARY
+
+       Module                       code    ro data   rw data
+       ------                       ----    -------   -------
+    .\
+       adcsinglechannel.obj         824     0         70     
+       main_freertos.obj            112     0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       936     0         70     
+                                                             
+    .\syscfg\
+       Board.obj                    18      179       1452   
+    +--+----------------------------+-------+---------+---------+
+       Total:                       18      179       1452   
+                                                             
+    C:/Users/Brandon/workspace_v10/freertos_builds_CC3220SF_LAUNCHXL_release_ccs/Debug/freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib
+       heap_4.obj                   888     0         32792  
+       tasks.obj                    4396    0         360    
+       queue.obj                    3112    0         0      
+       HwiPCC32XX_freertos.obj      332     0         2052   
+       timers.obj                   1562    0         60     
+       SystemP_freertos.obj         1450    0         0      
+       startup_cc32xx_ccs.obj       106     64        780    
+       pthread.obj                  798     6         20     
+       port.obj                     700     8         24     
+       ClockP_freertos.obj          646     0         4      
+       PowerCC32XX_freertos.obj     454     0         4      
+       list.obj                     298     0         0      
+       SemaphoreP_freertos.obj      250     0         0      
+       portasm.obj                  186     0         0      
+       PTLS.obj                     26      0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       15204   78        36096  
+                                                             
+    C:/ti/simplelink_cc32xx_sdk_3_20_00_06/source/ti/devices/cc32xx/driverlib/ccs/Release/driverlib.a
+       prcm.obj                     1756    168       0      
+       interrupt.obj                520     260       0      
+       pin.obj                      280     256       0      
+       flash.obj                    72      0         0      
+       uart.obj                     48      0         0      
+       cpu.obj                      32      0         0      
+       systick.obj                  32      0         0      
+       utils.obj                    6       0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       2746    684       0      
+                                                             
+    C:/ti/simplelink_cc32xx_sdk_3_20_00_06/source/ti/display/lib/display.aem4
+       DisplayUart.oem4             184     32        0      
+       Display.oem4                 174     1         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       358     33        0      
+                                                             
+    C:/ti/simplelink_cc32xx_sdk_3_20_00_06/source/ti/drivers/lib/drivers_cc32xx.aem4
+       UARTCC32XX.oem4              3442    116       0      
+       PowerCC32XX.oem4             2322    0         664    
+       ADCCC32XX.oem4               410     24        8      
+       UART.oem4                    186     36        1      
+       RingBuf.oem4                 198     0         0      
+       ADC.oem4                     172     8         1      
+       PowerCC32XX_asm.oem4         150     0         0      
+       List.oem4                    76      0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       6956    184       674    
+                                                             
+    C:\ti\ccs910\ccs\tools\compiler\ti-cgt-arm_18.12.2.LTS\lib\rtsv7M4_T_le_eabi.lib
+       fd_add_t2.asm.obj            438     0         0      
+       fd_mul_t2.asm.obj            252     0         0      
+       memcpy_t2.asm.obj            156     0         0      
+       ull_div_t2.asm.obj           150     0         0      
+       fd_cmp_t2.asm.obj            134     0         0      
+       memset_t2.asm.obj            122     0         0      
+       copy_decompress_lzss.c.obj   104     0         0      
+       fd_toi_t2.asm.obj            72      0         0      
+       autoinit.c.obj               68      0         0      
+       fd_tou_t2.asm.obj            68      0         0      
+       u_divt2.asm.obj              64      0         0      
+       i_tofd_t2.asm.obj            46      0         0      
+       boot_cortex_m.c.obj          36      0         0      
+       u_tofd_t2.asm.obj            32      0         0      
+       ll_mul_t2.asm.obj            24      0         0      
+       strlen.c.obj                 20      0         0      
+       copy_decompress_none.c.obj   14      0         0      
+       copy_zero_init.c.obj         12      0         0      
+       exit.c.obj                   4       0         0      
+       pre_init.c.obj               4       0         0      
+       div0.asm.obj                 2       0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       1822    0         0      
+                                                             
+       Stack:                       0       0         1024   
+       Linker Generated:            0       231       0      
+    +--+----------------------------+-------+---------+---------+
+       Grand Total:                 28040   1389      39316  
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 01007b00 records: 2, size/record: 8, table size: 16
+	.data: load addr=01007a28, load size=000000c3 bytes, run addr=20008aa0, run size=00000af6 bytes, compression=lzss
+	.bss: load addr=01007af8, load size=00000008 bytes, run addr=2000030c, run size=00008792 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 01007aec records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                               
+-------   ----                               
+0100516d  ADCCC32XX_close                    
+010075bb  ADCCC32XX_control                  
+010055b1  ADCCC32XX_convert                  
+0100703d  ADCCC32XX_convertToMicroVolts      
+01007948  ADCCC32XX_fxnTable                 
+0100759b  ADCCC32XX_init                     
+010048b5  ADCCC32XX_open                     
+01007541  ADC_Params_init                    
+0100754b  ADC_close                          
+01007960  ADC_config                         
+01007555  ADC_convert                        
+0100755f  ADC_convertToMicroVolts            
+01007a1d  ADC_count                          
+010079f8  ADC_defaultParams                  
+010062d5  ADC_init                           
+010064f5  ADC_open                           
+0100745d  Board_init                         
+010018cb  Board_initHook                     
+010075d7  C$$EXIT                            
+0100735b  CPUcpsie                           
+010074f7  CPUwfi                             
+010071b7  ClockP_Params_init                 
+010066b5  ClockP_callbackFxn                 
+01004645  ClockP_create                      
+01005c49  ClockP_delete                      
+0100705d  ClockP_getCpuFreq                  
+0100746d  ClockP_getSystemTickPeriod         
+010072d5  ClockP_setTimeout                  
+0100715d  ClockP_start                       
+01005615  ClockP_stop                        
+01002523  DisplayUartMin_clear               
+01003067  DisplayUartMin_clearLines          
+010072eb  DisplayUartMin_close               
+010075c1  DisplayUartMin_control             
+01007908  DisplayUartMin_fxnTable            
+010075c7  DisplayUartMin_getType             
+01003583  DisplayUartMin_init                
+01006005  DisplayUartMin_open                
+01006249  DisplayUartMin_vprintf             
+010079e0  Display_config                     
+01007a1c  Display_count                      
+01007a1f  Display_defaultParams              
+01006d71  Display_doInit                     
+010058c9  Display_doOpen                     
+01006d45  Display_doPrintf                   
+01006051  FlashDisable                       
+0100717b  HwiP_Params_init                   
+01005809  HwiP_create                        
+01007439  HwiP_delete                        
+01006c3d  HwiP_disable                       
+01006099  HwiP_dispatch                      
+20008aa0  HwiP_dispatchTable                 
+01006d99  HwiP_inISR                         
+0100707d  HwiP_restore                       
+01004111  IntDisable                         
+010041b9  IntEnable                          
+01007569  IntMasterEnable                    
+01005c9d  IntPrioritySet                     
+0100709d  IntRegister                        
+01006f21  IntUnregister                      
+01007371  IntVTableBaseSet                   
+01006e89  List_put                           
+01006eaf  List_remove                        
+01000ce5  PRCMCC3200MCUInit                  
+01007301  PRCMHIBRegRead                     
+01007317  PRCMHIBRegWrite                    
+010060e1  PRCMLPDSEnter                      
+010068d5  PRCMLPDSEnterKeepDebugIf           
+01006c69  PRCMLPDSIntervalSet                
+01006319  PRCMLPDSRestoreInfoSet             
+01006dc1  PRCMLPDSWakeupSourceEnable         
+01006de9  PRCMPeripheralClkDisable           
+01006129  PRCMPeripheralClkEnable            
+01005a39  PRCMPeripheralReset                
+010075a3  PRCMSleepEnter                     
+01006731  PRCMSlowClkCtrFastGet              
+01005869  PRCMSysResetCauseGet               
+01007229  PTLS_taskDeleteHook                
+01004a6d  PinConfigSet                       
+010069ed  PinModeGet                         
+01006535  PinModeSet                         
+010071d5  PinToPadGet                        
+01007858  PowerCC32XX_config                 
+01004261  PowerCC32XX_configureWakeup        
+2000870c  PowerCC32XX_contextSave            
+0100635d  PowerCC32XX_enterLPDS              
+01006c95  PowerCC32XX_getParkState           
+01003abb  PowerCC32XX_initPolicy             
+200092a0  PowerCC32XX_module                 
+01005e3d  PowerCC32XX_parkPin                
+01006a21  PowerCC32XX_restoreParkState       
+01006af1  PowerCC32XX_restoreParkedPin       
+01005d99  PowerCC32XX_resumeLPDS             
+01005679  PowerCC32XX_setParkState           
+010018cd  PowerCC32XX_sleepPolicy            
+01007505  Power_getConstraintMask            
+01007385  Power_getDependencyCount           
+010074cd  Power_getTransitionLatency         
+0100725d  Power_idleFunc                     
+01004c05  Power_init                         
+01006e11  Power_registerNotify               
+01006171  Power_releaseConstraint            
+01005a91  Power_releaseDependency            
+0100676d  Power_setConstraint                
+01004d91  Power_setDependency                
+01002645  Power_sleep                        
+010070bd  Power_unregisterNotify             
+0100744b  RingBuf_construct                  
+01006575  RingBuf_get                        
+010074db  RingBuf_isFull                     
+010070dd  RingBuf_peek                       
+0100628f  RingBuf_put                        
+0100732d  SemaphoreP_Params_init             
+01005bf1  SemaphoreP_create                  
+01006cc1  SemaphoreP_createBinary            
+01007511  SemaphoreP_delete                  
+01006a55  SemaphoreP_pend                    
+01006fd5  SemaphoreP_post                    
+0100747d  SysTickDisable                     
+0100748d  SysTickEnable                      
+01006ff7  SystemP_vsnprintf                  
+01007275  UARTBusy                           
+01002525  UARTCC32XX_close                   
+01002e85  UARTCC32XX_control                 
+01007898  UARTCC32XX_fxnTable                
+01003b77  UARTCC32XX_init                    
+01001111  UARTCC32XX_open                    
+010065b5  UARTCC32XX_read                    
+010069b5  UARTCC32XX_readCancel              
+01003a01  UARTCC32XX_readPolling             
+010034b9  UARTCC32XX_write                   
+0100547f  UARTCC32XX_writeCancel             
+010057a5  UARTCC32XX_writePolling            
+0100728d  UARTIntEnable                      
+010072a5  UART_Params_init                   
+01007573  UART_close                         
+010079ec  UART_config                        
+0100757d  UART_control                       
+01007a1e  UART_count                         
+010078c0  UART_defaultParams                 
+010063a1  UART_init                          
+010065f5  UART_open                          
+01007587  UART_write                         
+010075cd  UtilsDelay                         
+20040000  __STACK_END                        
+00000400  __STACK_SIZE                       
+01007b00  __TI_CINIT_Base                    
+01007b10  __TI_CINIT_Limit                   
+01007aec  __TI_Handler_Table_Base            
+01007af8  __TI_Handler_Table_Limit           
+010063e5  __TI_auto_init_nobinit_nopinit     
+01005417  __TI_decompress_lzss               
+010074e9  __TI_decompress_none               
+ffffffff  __TI_pprof_out_hndl                
+ffffffff  __TI_prof_data_size                
+ffffffff  __TI_prof_data_start               
+01007a28  __TI_static_base__                 
+0100751d  __TI_zero_init                     
+01004b7d  __aeabi_cdcmpeq                    
+01004b7d  __aeabi_cdcmple                    
+010061b9  __aeabi_d2iz                       
+0100646d  __aeabi_d2uiz                      
+0100171f  __aeabi_dadd                       
+01002b95  __aeabi_dmul                       
+01001715  __aeabi_dsub                       
+01006c0d  __aeabi_i2d                        
+01005c47  __aeabi_idiv0                      
+01005c47  __aeabi_ldiv0                      
+010072bd  __aeabi_lmul                       
+01004f87  __aeabi_memclr                     
+01004f87  __aeabi_memclr4                    
+01004f87  __aeabi_memclr8                    
+010046e5  __aeabi_memcpy                     
+010046e5  __aeabi_memcpy4                    
+010046e5  __aeabi_memcpy8                    
+01004f89  __aeabi_memset                     
+01004f89  __aeabi_memset4                    
+01004f89  __aeabi_memset8                    
+0100713d  __aeabi_ui2d                       
+01006635  __aeabi_uidiv                      
+01006635  __aeabi_uidivmod                   
+0100481d  __aeabi_uldivmod                   
+ffffffff  __binit__                          
+ffffffff  __c_args__                         
+UNDEFED   __mpu_init                         
+2003fc00  __stack                            
+01006f45  _c_int00_noargs                    
+01006ed5  _pthread_cleanup_pop               
+UNDEFED   _system_post_cinit                 
+010075d3  _system_pre_init                   
+010075d7  abort                              
+01007a00  adcCC32XXHWAttrs                   
+20008a94  adcCC32XXObjects                   
+20008a9c  adcValue0                          
+20008a98  adcValue0MicroVolt                 
+20008a58  adcValue1                          
+20008984  adcValue1MicroVolt                 
+ffffffff  binit                              
+010079a8  displayUartHWAttrs                 
+20008a6c  displayUartObject                  
+01005ae9  eTaskConfirmSleepModeStatus        
+01005e89  initVectors                        
+010056dd  main                               
+010033e5  mainThread                         
+010046e5  memcpy                             
+01004f8f  memset                             
+2000940c  parkInfo                           
+010071f1  pthread_attr_init                  
+01007019  pthread_attr_setdetachstate        
+01006e39  pthread_attr_setschedparam         
+010073ad  pthread_attr_setstacksize          
+010022c1  pthread_create                     
+01005981  pthread_exit                       
+010073c1  pthread_self                       
+010066f3  pthread_setcancelstate             
+01001bfd  pvPortMalloc                       
+01006821  pvTaskGetThreadLocalStoragePointer 
+0100720d  pvTaskIncrementMutexHeldCount      
+01006bdf  pvTimerGetTimerID                  
+20009504  pxCurrentTCB                       
+01005ded  pxPortInitialiseStack              
+01007345  resetISR                           
+01007354  resetVectorAddr                    
+01000800  resetVectors                       
+010073e9  strlen                             
+01002a95  threadFxn0                         
+01001ed9  threadFxn1                         
+20008900  uartCC32XXObjects0                 
+01007a08  ulMaxSyscallInterruptPriority      
+01003acd  ulPortGetIPSR                      
+01006201  uxListRemove                       
+01005deb  vApplicationMallocFailedHook       
+01007591  vApplicationStackOverflowHook      
+01006b21  vListInitialise                    
+010074ad  vListInitialiseItem                
+0100554b  vListInsert                        
+0100685d  vListInsertEnd                     
+01005fb9  vPortEnterCritical                 
+01006b51  vPortExitCritical                  
+01004781  vPortFree                          
+01003b31  vPortSVCHandler                    
+01005b41  vPortSetupTimerInterrupt           
+01003b55  vPortStartFirstTask                
+010073fd  vPortSuppressTicksAndSleep         
+010052c9  vPortValidateInterruptPriority     
+01006f8d  vQueueDelete                       
+010059dd  vQueueWaitForMessageRestricted     
+01002d8d  vTaskDelete                        
+01006fb1  vTaskInternalSetTimeOutState       
+01007535  vTaskMissedYield                   
+01006abd  vTaskPlaceOnEventList              
+01006675  vTaskPlaceOnEventListRestricted    
+0100287d  vTaskPriorityDisinheritAfterTimeout
+01006ced  vTaskSetApplicationTaskTag         
+01004949  vTaskStartScheduler                
+010064b1  vTaskStepTick                      
+01002c91  vTaskSuspend                       
+010074bd  vTaskSuspendAll                    
+01003231  vTaskSwitchContext                 
+01003ae5  xPortPendSVHandler                 
+01003709  xPortStartScheduler                
+01006d19  xPortSysTickHandler                
+01005b99  xQueueCreateCountingSemaphore      
+010053ad  xQueueGenericCreate                
+01003c31  xQueueGenericReset                 
+0100155d  xQueueGenericSend                  
+01002991  xQueueGenericSendFromISR           
+01002f77  xQueueGiveFromISR                  
+01001a7d  xQueueReceive                      
+0100330d  xQueueReceiveFromISR               
+01001389  xQueueSemaphoreTake                
+01003f05  xTaskCheckForTimeOut               
+01005001  xTaskCreate                        
+01006e61  xTaskGetApplicationTaskTag         
+01007411  xTaskGetCurrentTaskHandle          
+01006b81  xTaskGetSchedulerState             
+01007425  xTaskGetTickCount                  
+01002185  xTaskIncrementTick                 
+01003151  xTaskPriorityDisinherit            
+01003069  xTaskPriorityInherit               
+01004459  xTaskRemoveFromEventList           
+01002761  xTaskResumeAll                     
+01006899  xTimerCreate                       
+01005d45  xTimerCreateTimerTask              
+01004d0d  xTimerGenericCommand               
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                               
+-------   ----                               
+00000400  __STACK_SIZE                       
+01000800  resetVectors                       
+01000ce5  PRCMCC3200MCUInit                  
+01001111  UARTCC32XX_open                    
+01001389  xQueueSemaphoreTake                
+0100155d  xQueueGenericSend                  
+01001715  __aeabi_dsub                       
+0100171f  __aeabi_dadd                       
+010018cb  Board_initHook                     
+010018cd  PowerCC32XX_sleepPolicy            
+01001a7d  xQueueReceive                      
+01001bfd  pvPortMalloc                       
+01001ed9  threadFxn1                         
+01002185  xTaskIncrementTick                 
+010022c1  pthread_create                     
+01002523  DisplayUartMin_clear               
+01002525  UARTCC32XX_close                   
+01002645  Power_sleep                        
+01002761  xTaskResumeAll                     
+0100287d  vTaskPriorityDisinheritAfterTimeout
+01002991  xQueueGenericSendFromISR           
+01002a95  threadFxn0                         
+01002b95  __aeabi_dmul                       
+01002c91  vTaskSuspend                       
+01002d8d  vTaskDelete                        
+01002e85  UARTCC32XX_control                 
+01002f77  xQueueGiveFromISR                  
+01003067  DisplayUartMin_clearLines          
+01003069  xTaskPriorityInherit               
+01003151  xTaskPriorityDisinherit            
+01003231  vTaskSwitchContext                 
+0100330d  xQueueReceiveFromISR               
+010033e5  mainThread                         
+010034b9  UARTCC32XX_write                   
+01003583  DisplayUartMin_init                
+01003709  xPortStartScheduler                
+01003a01  UARTCC32XX_readPolling             
+01003abb  PowerCC32XX_initPolicy             
+01003acd  ulPortGetIPSR                      
+01003ae5  xPortPendSVHandler                 
+01003b31  vPortSVCHandler                    
+01003b55  vPortStartFirstTask                
+01003b77  UARTCC32XX_init                    
+01003c31  xQueueGenericReset                 
+01003f05  xTaskCheckForTimeOut               
+01004111  IntDisable                         
+010041b9  IntEnable                          
+01004261  PowerCC32XX_configureWakeup        
+01004459  xTaskRemoveFromEventList           
+01004645  ClockP_create                      
+010046e5  __aeabi_memcpy                     
+010046e5  __aeabi_memcpy4                    
+010046e5  __aeabi_memcpy8                    
+010046e5  memcpy                             
+01004781  vPortFree                          
+0100481d  __aeabi_uldivmod                   
+010048b5  ADCCC32XX_open                     
+01004949  vTaskStartScheduler                
+01004a6d  PinConfigSet                       
+01004b7d  __aeabi_cdcmpeq                    
+01004b7d  __aeabi_cdcmple                    
+01004c05  Power_init                         
+01004d0d  xTimerGenericCommand               
+01004d91  Power_setDependency                
+01004f87  __aeabi_memclr                     
+01004f87  __aeabi_memclr4                    
+01004f87  __aeabi_memclr8                    
+01004f89  __aeabi_memset                     
+01004f89  __aeabi_memset4                    
+01004f89  __aeabi_memset8                    
+01004f8f  memset                             
+01005001  xTaskCreate                        
+0100516d  ADCCC32XX_close                    
+010052c9  vPortValidateInterruptPriority     
+010053ad  xQueueGenericCreate                
+01005417  __TI_decompress_lzss               
+0100547f  UARTCC32XX_writeCancel             
+0100554b  vListInsert                        
+010055b1  ADCCC32XX_convert                  
+01005615  ClockP_stop                        
+01005679  PowerCC32XX_setParkState           
+010056dd  main                               
+010057a5  UARTCC32XX_writePolling            
+01005809  HwiP_create                        
+01005869  PRCMSysResetCauseGet               
+010058c9  Display_doOpen                     
+01005981  pthread_exit                       
+010059dd  vQueueWaitForMessageRestricted     
+01005a39  PRCMPeripheralReset                
+01005a91  Power_releaseDependency            
+01005ae9  eTaskConfirmSleepModeStatus        
+01005b41  vPortSetupTimerInterrupt           
+01005b99  xQueueCreateCountingSemaphore      
+01005bf1  SemaphoreP_create                  
+01005c47  __aeabi_idiv0                      
+01005c47  __aeabi_ldiv0                      
+01005c49  ClockP_delete                      
+01005c9d  IntPrioritySet                     
+01005d45  xTimerCreateTimerTask              
+01005d99  PowerCC32XX_resumeLPDS             
+01005deb  vApplicationMallocFailedHook       
+01005ded  pxPortInitialiseStack              
+01005e3d  PowerCC32XX_parkPin                
+01005e89  initVectors                        
+01005fb9  vPortEnterCritical                 
+01006005  DisplayUartMin_open                
+01006051  FlashDisable                       
+01006099  HwiP_dispatch                      
+010060e1  PRCMLPDSEnter                      
+01006129  PRCMPeripheralClkEnable            
+01006171  Power_releaseConstraint            
+010061b9  __aeabi_d2iz                       
+01006201  uxListRemove                       
+01006249  DisplayUartMin_vprintf             
+0100628f  RingBuf_put                        
+010062d5  ADC_init                           
+01006319  PRCMLPDSRestoreInfoSet             
+0100635d  PowerCC32XX_enterLPDS              
+010063a1  UART_init                          
+010063e5  __TI_auto_init_nobinit_nopinit     
+0100646d  __aeabi_d2uiz                      
+010064b1  vTaskStepTick                      
+010064f5  ADC_open                           
+01006535  PinModeSet                         
+01006575  RingBuf_get                        
+010065b5  UARTCC32XX_read                    
+010065f5  UART_open                          
+01006635  __aeabi_uidiv                      
+01006635  __aeabi_uidivmod                   
+01006675  vTaskPlaceOnEventListRestricted    
+010066b5  ClockP_callbackFxn                 
+010066f3  pthread_setcancelstate             
+01006731  PRCMSlowClkCtrFastGet              
+0100676d  Power_setConstraint                
+01006821  pvTaskGetThreadLocalStoragePointer 
+0100685d  vListInsertEnd                     
+01006899  xTimerCreate                       
+010068d5  PRCMLPDSEnterKeepDebugIf           
+010069b5  UARTCC32XX_readCancel              
+010069ed  PinModeGet                         
+01006a21  PowerCC32XX_restoreParkState       
+01006a55  SemaphoreP_pend                    
+01006abd  vTaskPlaceOnEventList              
+01006af1  PowerCC32XX_restoreParkedPin       
+01006b21  vListInitialise                    
+01006b51  vPortExitCritical                  
+01006b81  xTaskGetSchedulerState             
+01006bdf  pvTimerGetTimerID                  
+01006c0d  __aeabi_i2d                        
+01006c3d  HwiP_disable                       
+01006c69  PRCMLPDSIntervalSet                
+01006c95  PowerCC32XX_getParkState           
+01006cc1  SemaphoreP_createBinary            
+01006ced  vTaskSetApplicationTaskTag         
+01006d19  xPortSysTickHandler                
+01006d45  Display_doPrintf                   
+01006d71  Display_doInit                     
+01006d99  HwiP_inISR                         
+01006dc1  PRCMLPDSWakeupSourceEnable         
+01006de9  PRCMPeripheralClkDisable           
+01006e11  Power_registerNotify               
+01006e39  pthread_attr_setschedparam         
+01006e61  xTaskGetApplicationTaskTag         
+01006e89  List_put                           
+01006eaf  List_remove                        
+01006ed5  _pthread_cleanup_pop               
+01006f21  IntUnregister                      
+01006f45  _c_int00_noargs                    
+01006f8d  vQueueDelete                       
+01006fb1  vTaskInternalSetTimeOutState       
+01006fd5  SemaphoreP_post                    
+01006ff7  SystemP_vsnprintf                  
+01007019  pthread_attr_setdetachstate        
+0100703d  ADCCC32XX_convertToMicroVolts      
+0100705d  ClockP_getCpuFreq                  
+0100707d  HwiP_restore                       
+0100709d  IntRegister                        
+010070bd  Power_unregisterNotify             
+010070dd  RingBuf_peek                       
+0100713d  __aeabi_ui2d                       
+0100715d  ClockP_start                       
+0100717b  HwiP_Params_init                   
+010071b7  ClockP_Params_init                 
+010071d5  PinToPadGet                        
+010071f1  pthread_attr_init                  
+0100720d  pvTaskIncrementMutexHeldCount      
+01007229  PTLS_taskDeleteHook                
+0100725d  Power_idleFunc                     
+01007275  UARTBusy                           
+0100728d  UARTIntEnable                      
+010072a5  UART_Params_init                   
+010072bd  __aeabi_lmul                       
+010072d5  ClockP_setTimeout                  
+010072eb  DisplayUartMin_close               
+01007301  PRCMHIBRegRead                     
+01007317  PRCMHIBRegWrite                    
+0100732d  SemaphoreP_Params_init             
+01007345  resetISR                           
+01007354  resetVectorAddr                    
+0100735b  CPUcpsie                           
+01007371  IntVTableBaseSet                   
+01007385  Power_getDependencyCount           
+010073ad  pthread_attr_setstacksize          
+010073c1  pthread_self                       
+010073e9  strlen                             
+010073fd  vPortSuppressTicksAndSleep         
+01007411  xTaskGetCurrentTaskHandle          
+01007425  xTaskGetTickCount                  
+01007439  HwiP_delete                        
+0100744b  RingBuf_construct                  
+0100745d  Board_init                         
+0100746d  ClockP_getSystemTickPeriod         
+0100747d  SysTickDisable                     
+0100748d  SysTickEnable                      
+010074ad  vListInitialiseItem                
+010074bd  vTaskSuspendAll                    
+010074cd  Power_getTransitionLatency         
+010074db  RingBuf_isFull                     
+010074e9  __TI_decompress_none               
+010074f7  CPUwfi                             
+01007505  Power_getConstraintMask            
+01007511  SemaphoreP_delete                  
+0100751d  __TI_zero_init                     
+01007535  vTaskMissedYield                   
+01007541  ADC_Params_init                    
+0100754b  ADC_close                          
+01007555  ADC_convert                        
+0100755f  ADC_convertToMicroVolts            
+01007569  IntMasterEnable                    
+01007573  UART_close                         
+0100757d  UART_control                       
+01007587  UART_write                         
+01007591  vApplicationStackOverflowHook      
+0100759b  ADCCC32XX_init                     
+010075a3  PRCMSleepEnter                     
+010075bb  ADCCC32XX_control                  
+010075c1  DisplayUartMin_control             
+010075c7  DisplayUartMin_getType             
+010075cd  UtilsDelay                         
+010075d3  _system_pre_init                   
+010075d7  C$$EXIT                            
+010075d7  abort                              
+01007858  PowerCC32XX_config                 
+01007898  UARTCC32XX_fxnTable                
+010078c0  UART_defaultParams                 
+01007908  DisplayUartMin_fxnTable            
+01007948  ADCCC32XX_fxnTable                 
+01007960  ADC_config                         
+010079a8  displayUartHWAttrs                 
+010079e0  Display_config                     
+010079ec  UART_config                        
+010079f8  ADC_defaultParams                  
+01007a00  adcCC32XXHWAttrs                   
+01007a08  ulMaxSyscallInterruptPriority      
+01007a1c  Display_count                      
+01007a1d  ADC_count                          
+01007a1e  UART_count                         
+01007a1f  Display_defaultParams              
+01007a28  __TI_static_base__                 
+01007aec  __TI_Handler_Table_Base            
+01007af8  __TI_Handler_Table_Limit           
+01007b00  __TI_CINIT_Base                    
+01007b10  __TI_CINIT_Limit                   
+2000870c  PowerCC32XX_contextSave            
+20008900  uartCC32XXObjects0                 
+20008984  adcValue1MicroVolt                 
+20008a58  adcValue1                          
+20008a6c  displayUartObject                  
+20008a94  adcCC32XXObjects                   
+20008a98  adcValue0MicroVolt                 
+20008a9c  adcValue0                          
+20008aa0  HwiP_dispatchTable                 
+200092a0  PowerCC32XX_module                 
+2000940c  parkInfo                           
+20009504  pxCurrentTCB                       
+2003fc00  __stack                            
+20040000  __STACK_END                        
+ffffffff  __TI_pprof_out_hndl                
+ffffffff  __TI_prof_data_size                
+ffffffff  __TI_prof_data_start               
+ffffffff  __binit__                          
+ffffffff  __c_args__                         
+ffffffff  binit                              
+UNDEFED   __mpu_init                         
+UNDEFED   _system_post_cinit                 
+
+[285 symbols]
